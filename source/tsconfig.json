@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "../dist",
+    "module": "es2020",
+    "target": "es2017",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true
+  }
+}
