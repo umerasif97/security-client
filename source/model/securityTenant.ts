@@ -1,5 +1,5 @@
-import { Basic } from '@flexicore/flexicore-client';
+import { SecurityEntity } from './securityEntity';
 
-export interface SecurityTenant extends Basic {
+export interface SecurityTenant extends SecurityEntity {
     externalId?: string;
 }

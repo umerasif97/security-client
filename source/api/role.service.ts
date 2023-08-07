@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Role } from "../model/role";
 import { RoleCreate } from "../model/roleCreate";
-import { RoleFiltering } from "../model/roleFiltering";
+import { RoleFilter } from "../model/roleFilter";
 import { RoleUpdate } from "../model/roleUpdate";
 
 @Injectable()
@@ -63,10 +63,10 @@ export class RoleService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getAll(body?: RoleFiltering, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<Role>>;
-    public getAll(body?: RoleFiltering, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<Role>>>;
-    public getAll(body?: RoleFiltering, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<Role>>>;
-    public getAll(body?: RoleFiltering, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: RoleFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<Role>>;
+    public getAll(body?: RoleFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<Role>>>;
+    public getAll(body?: RoleFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<Role>>>;
+    public getAll(body?: RoleFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

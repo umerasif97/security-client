@@ -1,12 +1,12 @@
-import { Basic } from '@flexicore/flexicore-client';
 import { Baseclass } from './baseclass';
 import { PermissionGroup } from './permissionGroup';
 import { Clazz } from './clazz';
 import { SecurityOperation } from './securityOperation';
 import { Tenant } from './tenant';
 import { SecurityEntity } from './securityEntity';
+import { SecurityLink } from './securityLink';
 
-export interface TenantToBaseclass extends Basic {
+export interface TenantToBaseclass extends SecurityLink {
     baseclass?: Baseclass;
     permissionGroup?: PermissionGroup;
     clazz?: Clazz;

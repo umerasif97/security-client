@@ -1,11 +1,5 @@
-export interface SecurityLinkUpdate  {
-    name?: string;
-    description?: string;
-    baseclassId?: string;
-    permissionGroupId?: string;
-    clazzId?: string;
-    operationId?: string;
-    access?: string;
+import { SecurityLinkCreate } from "./securityLinkCreate";
+
+export interface SecurityLinkUpdate extends SecurityLinkCreate {
     id?: string;
-    tenantId?: string;
 }

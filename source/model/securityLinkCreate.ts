@@ -1,6 +1,11 @@
-import { BaselinkCreate } from "./baselinkCreate";
+import { BasicCreate } from "@flexicore/flexicore-client";
+import { Access } from "./ioperations";
 
 
-export interface SecurityLinkCreate extends BaselinkCreate {
-
+export interface SecurityLinkCreate extends BasicCreate {
+    baseclassId?: string;
+    permissionGroupId?: string;
+    clazzId?: string;
+    operationId?: string;
+    access?: Access;
 }

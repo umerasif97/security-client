@@ -14,7 +14,7 @@ export * from './securityUserFilter';
 export * from './role';
 export * from './roleCreate';
 export * from './roleUpdate';
-export * from './roleFiltering';
+export * from './roleFilter';
 
 // SecurityTenant models
 export * from './securityTenant';
@@ -80,9 +80,6 @@ export * from './paginationFilter';
 export * from './baseclass';
 export * from './baseclassCreate';
 export * from './baseclassFilter';
-
-// Baselink models
-export * from './baselinkCreate';
 
 // Ioperations
 export * from './ioperations';

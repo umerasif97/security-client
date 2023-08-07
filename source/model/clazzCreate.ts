@@ -1,4 +1,4 @@
-import { BaseclassCreate } from "./baseclassCreate";
+import { BasicCreate } from '@flexicore/flexicore-client';
 
-export interface ClazzCreate extends BaseclassCreate {
+export interface ClazzCreate extends BasicCreate {
 }
