@@ -4,12 +4,13 @@ import { Clazz } from "./clazz";
 import { SecurityOperation } from "./securityOperation";
 import { Baseclass } from "./baseclass";
 import { SecurityEntity } from "./securityEntity";
+import { Access } from "./access";
 
 export interface SecurityLink extends Basic {
     baseclass?: Baseclass;
     permissionGroup?: PermissionGroup;
     clazz?: Clazz;
     operation?: SecurityOperation;
-    access?: string;
+    access?: Access;
     securityEntity?: SecurityEntity;
 }

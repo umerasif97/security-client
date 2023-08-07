@@ -58,9 +58,6 @@ export * from './roleToBaseclassCreate';
 export * from './roleToBaseclassUpdate';
 export * from './roleToBaseclassFilter';
 
-// Tenant models
-export * from './tenant';
-
 // TenantToBaseclass models
 export * from './tenantToBaseclass';
 export * from './tenantToBaseclassCreate';
@@ -82,7 +79,7 @@ export * from './baseclassCreate';
 export * from './baseclassFilter';
 
 // Ioperations
-export * from './ioperations';
+export * from './access';
 
 // SecurityEntity models
 export * from './securityEntity';
