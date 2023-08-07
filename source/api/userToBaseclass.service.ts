@@ -26,16 +26,13 @@ export class UserToBaseclassService {
         }
     }
 
-    public createUserToBaseclass(body?: UserToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<UserToBaseclass>;
-    public createUserToBaseclass(body?: UserToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<UserToBaseclass>>;
-    public createUserToBaseclass(body?: UserToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<UserToBaseclass>>;
-    public createUserToBaseclass(body?: UserToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public create(body?: UserToBaseclassCreate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<UserToBaseclass>;
+    public create(body?: UserToBaseclassCreate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<UserToBaseclass>>;
+    public create(body?: UserToBaseclassCreate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<UserToBaseclass>>;
+    public create(body?: UserToBaseclassCreate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -55,7 +52,7 @@ export class UserToBaseclassService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<UserToBaseclass>(`${this.basePath}/api/userToBaseclass/create`,
+        return this.httpClient.post<UserToBaseclass>(`${this.basePath}/userToBaseclass/create`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -66,16 +63,13 @@ export class UserToBaseclassService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<UserToBaseclass>>;
-    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<UserToBaseclass>>>;
-    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<UserToBaseclass>>>;
-    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: UserToBaseclassFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<UserToBaseclass>>;
+    public getAll(body?: UserToBaseclassFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<UserToBaseclass>>>;
+    public getAll(body?: UserToBaseclassFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<UserToBaseclass>>>;
+    public getAll(body?: UserToBaseclassFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -95,7 +89,7 @@ export class UserToBaseclassService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<UserToBaseclass>>(`${this.basePath}/api/userToBaseclass/getAll`,
+        return this.httpClient.post<PaginationResponse<UserToBaseclass>>(`${this.basePath}/userToBaseclass/getAll`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -106,16 +100,13 @@ export class UserToBaseclassService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updateUserToBaseclass(body?: UserToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<UserToBaseclass>;
-    public updateUserToBaseclass(body?: UserToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<UserToBaseclass>>;
-    public updateUserToBaseclass(body?: UserToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<UserToBaseclass>>;
-    public updateUserToBaseclass(body?: UserToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public update(body?: UserToBaseclassUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<UserToBaseclass>;
+    public update(body?: UserToBaseclassUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<UserToBaseclass>>;
+    public update(body?: UserToBaseclassUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<UserToBaseclass>>;
+    public update(body?: UserToBaseclassUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -135,7 +126,7 @@ export class UserToBaseclassService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<UserToBaseclass>(`${this.basePath}/api/userToBaseclass/update`,
+        return this.httpClient.put<UserToBaseclass>(`${this.basePath}/userToBaseclass/update`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,

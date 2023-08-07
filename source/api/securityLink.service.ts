@@ -25,16 +25,13 @@ export class SecurityLinkService {
         }
     }
 
-    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityLink>>;
-    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityLink>>>;
-    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityLink>>>;
-    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: SecurityLinkFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityLink>>;
+    public getAll(body?: SecurityLinkFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityLink>>>;
+    public getAll(body?: SecurityLinkFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityLink>>>;
+    public getAll(body?: SecurityLinkFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -54,7 +51,7 @@ export class SecurityLinkService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<SecurityLink>>(`${this.basePath}/api/securityLink/getAll`,
+        return this.httpClient.post<PaginationResponse<SecurityLink>>(`${this.basePath}/securityLink/getAll`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -65,16 +62,13 @@ export class SecurityLinkService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updateSecurityLink(body?: SecurityLinkUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityLink>;
-    public updateSecurityLink(body?: SecurityLinkUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityLink>>;
-    public updateSecurityLink(body?: SecurityLinkUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityLink>>;
-    public updateSecurityLink(body?: SecurityLinkUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public update(body?: SecurityLinkUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityLink>;
+    public update(body?: SecurityLinkUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityLink>>;
+    public update(body?: SecurityLinkUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityLink>>;
+    public update(body?: SecurityLinkUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -94,7 +88,7 @@ export class SecurityLinkService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<SecurityLink>(`${this.basePath}/api/securityLink/update`,
+        return this.httpClient.put<SecurityLink>(`${this.basePath}/securityLink/update`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,

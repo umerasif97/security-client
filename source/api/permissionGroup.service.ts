@@ -26,16 +26,13 @@ export class PermissionGroupService {
         }
     }
 
-    public createPermissionGroup(body?: PermissionGroupCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PermissionGroup>;
-    public createPermissionGroup(body?: PermissionGroupCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PermissionGroup>>;
-    public createPermissionGroup(body?: PermissionGroupCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PermissionGroup>>;
-    public createPermissionGroup(body?: PermissionGroupCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public create(body?: PermissionGroupCreate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PermissionGroup>;
+    public create(body?: PermissionGroupCreate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PermissionGroup>>;
+    public create(body?: PermissionGroupCreate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PermissionGroup>>;
+    public create(body?: PermissionGroupCreate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -55,7 +52,7 @@ export class PermissionGroupService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PermissionGroup>(`${this.basePath}/api/permissionGroup/create`,
+        return this.httpClient.post<PermissionGroup>(`${this.basePath}/permissionGroup/create`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -66,16 +63,13 @@ export class PermissionGroupService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<PermissionGroup>>;
-    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<PermissionGroup>>>;
-    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<PermissionGroup>>>;
-    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: PermissionGroupFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<PermissionGroup>>;
+    public getAll(body?: PermissionGroupFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<PermissionGroup>>>;
+    public getAll(body?: PermissionGroupFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<PermissionGroup>>>;
+    public getAll(body?: PermissionGroupFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -95,7 +89,7 @@ export class PermissionGroupService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<PermissionGroup>>(`${this.basePath}/api/permissionGroup/getAll`,
+        return this.httpClient.post<PaginationResponse<PermissionGroup>>(`${this.basePath}/permissionGroup/getAll`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -106,16 +100,13 @@ export class PermissionGroupService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updatePermissionGroup(body?: PermissionGroupUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PermissionGroup>;
-    public updatePermissionGroup(body?: PermissionGroupUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PermissionGroup>>;
-    public updatePermissionGroup(body?: PermissionGroupUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PermissionGroup>>;
-    public updatePermissionGroup(body?: PermissionGroupUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public update(body?: PermissionGroupUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PermissionGroup>;
+    public update(body?: PermissionGroupUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PermissionGroup>>;
+    public update(body?: PermissionGroupUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PermissionGroup>>;
+    public update(body?: PermissionGroupUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -135,7 +126,7 @@ export class PermissionGroupService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<PermissionGroup>(`${this.basePath}/api/permissionGroup/update`,
+        return this.httpClient.put<PermissionGroup>(`${this.basePath}/permissionGroup/update`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,

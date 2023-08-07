@@ -26,16 +26,13 @@ export class SecurityOperationService {
         }
     }
 
-    public createSecurityOperation(body?: SecurityOperationCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityOperation>;
-    public createSecurityOperation(body?: SecurityOperationCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityOperation>>;
-    public createSecurityOperation(body?: SecurityOperationCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityOperation>>;
-    public createSecurityOperation(body?: SecurityOperationCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public create(body?: SecurityOperationCreate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityOperation>;
+    public create(body?: SecurityOperationCreate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityOperation>>;
+    public create(body?: SecurityOperationCreate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityOperation>>;
+    public create(body?: SecurityOperationCreate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -55,7 +52,7 @@ export class SecurityOperationService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<SecurityOperation>(`${this.basePath}/api/securityOperation/create`,
+        return this.httpClient.post<SecurityOperation>(`${this.basePath}/securityOperation/create`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -66,16 +63,13 @@ export class SecurityOperationService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityOperation>>;
-    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityOperation>>>;
-    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityOperation>>>;
-    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: SecurityOperationFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityOperation>>;
+    public getAll(body?: SecurityOperationFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityOperation>>>;
+    public getAll(body?: SecurityOperationFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityOperation>>>;
+    public getAll(body?: SecurityOperationFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -95,7 +89,7 @@ export class SecurityOperationService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<SecurityOperation>>(`${this.basePath}/api/securityOperation/getAll`,
+        return this.httpClient.post<PaginationResponse<SecurityOperation>>(`${this.basePath}/securityOperation/getAll`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -106,16 +100,13 @@ export class SecurityOperationService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updateSecurityOperation(body?: SecurityOperationUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityOperation>;
-    public updateSecurityOperation(body?: SecurityOperationUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityOperation>>;
-    public updateSecurityOperation(body?: SecurityOperationUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityOperation>>;
-    public updateSecurityOperation(body?: SecurityOperationUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public update(body?: SecurityOperationUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityOperation>;
+    public update(body?: SecurityOperationUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityOperation>>;
+    public update(body?: SecurityOperationUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityOperation>>;
+    public update(body?: SecurityOperationUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -135,7 +126,7 @@ export class SecurityOperationService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<SecurityOperation>(`${this.basePath}/api/securityOperation/update`,
+        return this.httpClient.put<SecurityOperation>(`${this.basePath}/securityOperation/update`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,

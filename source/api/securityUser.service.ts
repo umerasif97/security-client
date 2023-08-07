@@ -26,16 +26,13 @@ export class SecurityUserService {
         }
     }
 
-    public createSecurityUser(body?: SecurityUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityUser>;
-    public createSecurityUser(body?: SecurityUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityUser>>;
-    public createSecurityUser(body?: SecurityUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityUser>>;
-    public createSecurityUser(body?: SecurityUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public create(body?: SecurityUserCreate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityUser>;
+    public create(body?: SecurityUserCreate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityUser>>;
+    public create(body?: SecurityUserCreate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityUser>>;
+    public create(body?: SecurityUserCreate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -55,7 +52,7 @@ export class SecurityUserService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<SecurityUser>(`${this.basePath}/api/securityUser/create`,
+        return this.httpClient.post<SecurityUser>(`${this.basePath}/securityUser/create`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -66,16 +63,13 @@ export class SecurityUserService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityUser>>;
-    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityUser>>>;
-    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityUser>>>;
-    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: SecurityUserFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityUser>>;
+    public getAll(body?: SecurityUserFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityUser>>>;
+    public getAll(body?: SecurityUserFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityUser>>>;
+    public getAll(body?: SecurityUserFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -95,7 +89,7 @@ export class SecurityUserService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<SecurityUser>>(`${this.basePath}/api/securityUser/getAll`,
+        return this.httpClient.post<PaginationResponse<SecurityUser>>(`${this.basePath}/securityUser/getAll`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -106,16 +100,13 @@ export class SecurityUserService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updateSecurityUser(body?: SecurityUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityUser>;
-    public updateSecurityUser(body?: SecurityUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityUser>>;
-    public updateSecurityUser(body?: SecurityUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityUser>>;
-    public updateSecurityUser(body?: SecurityUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public update(body?: SecurityUserUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityUser>;
+    public update(body?: SecurityUserUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityUser>>;
+    public update(body?: SecurityUserUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityUser>>;
+    public update(body?: SecurityUserUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -135,7 +126,7 @@ export class SecurityUserService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<SecurityUser>(`${this.basePath}/api/securityUser/update`,
+        return this.httpClient.put<SecurityUser>(`${this.basePath}/securityUser/update`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,

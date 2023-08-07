@@ -26,16 +26,13 @@ export class SecurityTenantService {
         }
     }
 
-    public createSecurityTenant(body?: SecurityTenantCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityTenant>;
-    public createSecurityTenant(body?: SecurityTenantCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityTenant>>;
-    public createSecurityTenant(body?: SecurityTenantCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityTenant>>;
-    public createSecurityTenant(body?: SecurityTenantCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public create(body?: SecurityTenantCreate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityTenant>;
+    public create(body?: SecurityTenantCreate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityTenant>>;
+    public create(body?: SecurityTenantCreate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityTenant>>;
+    public create(body?: SecurityTenantCreate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -55,7 +52,7 @@ export class SecurityTenantService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<SecurityTenant>(`${this.basePath}/api/securityTenant/create`,
+        return this.httpClient.post<SecurityTenant>(`${this.basePath}/securityTenant/create`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -66,16 +63,13 @@ export class SecurityTenantService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityTenant>>;
-    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityTenant>>>;
-    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityTenant>>>;
-    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: SecurityTenantFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityTenant>>;
+    public getAll(body?: SecurityTenantFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityTenant>>>;
+    public getAll(body?: SecurityTenantFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityTenant>>>;
+    public getAll(body?: SecurityTenantFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -95,7 +89,7 @@ export class SecurityTenantService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<SecurityTenant>>(`${this.basePath}/api/securityTenant/getAll`,
+        return this.httpClient.post<PaginationResponse<SecurityTenant>>(`${this.basePath}/securityTenant/getAll`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -106,16 +100,13 @@ export class SecurityTenantService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updateSecurityTenant(body?: SecurityTenantUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityTenant>;
-    public updateSecurityTenant(body?: SecurityTenantUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityTenant>>;
-    public updateSecurityTenant(body?: SecurityTenantUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityTenant>>;
-    public updateSecurityTenant(body?: SecurityTenantUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public update(body?: SecurityTenantUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<SecurityTenant>;
+    public update(body?: SecurityTenantUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SecurityTenant>>;
+    public update(body?: SecurityTenantUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SecurityTenant>>;
+    public update(body?: SecurityTenantUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -135,7 +126,7 @@ export class SecurityTenantService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<SecurityTenant>(`${this.basePath}/api/securityTenant/update`,
+        return this.httpClient.put<SecurityTenant>(`${this.basePath}/securityTenant/update`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,

@@ -1,7 +1,4 @@
-import { BasicPropertiesFilter } from '@flexicore/flexicore-client';
+import { SecurityEntityFilter } from './securityEntityFilter';
 
-export interface SecurityUserFilter {
-        pageSize?: number;
-        currentPage?: number;
-        basicPropertiesFilter?: BasicPropertiesFilter;
+export interface SecurityUserFilter extends SecurityEntityFilter {
 }

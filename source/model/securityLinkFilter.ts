@@ -1,10 +1,10 @@
 import { BasicPropertiesFilter } from '@flexicore/flexicore-client';
+import { PaginationFilter } from './paginationFilter';
+import { Access } from './ioperations';
 
-export interface SecurityLinkFilter  {
-    pageSize?: number;
-    currentPage?: number;
+export interface SecurityLinkFilter extends PaginationFilter {
     basicPropertiesFilter?: BasicPropertiesFilter;
     baseclassIds?: string[];
     operationIds?: string[];
-    accesses?: string[];
+    accesses?: Access[];
 }

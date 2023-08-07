@@ -1,6 +1,6 @@
 import { BasicPropertiesFilter } from '@flexicore/flexicore-client';
-import { PaginationFilter } from './paginationFilter';
+import { PaginationFilter } from "./paginationFilter";
 
-export interface ClazzFilter extends PaginationFilter {
+export interface SecurityEntityFilter extends PaginationFilter {
     basicPropertiesFilter?: BasicPropertiesFilter;
 }

@@ -26,16 +26,13 @@ export class CommonUserService {
         }
     }
 
-    public createCommonUser(body?: CommonUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<CommonUser>;
-    public createCommonUser(body?: CommonUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<CommonUser>>;
-    public createCommonUser(body?: CommonUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<CommonUser>>;
-    public createCommonUser(body?: CommonUserCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public createUser(body?: CommonUserCreate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<CommonUser>;
+    public createUser(body?: CommonUserCreate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<CommonUser>>;
+    public createUser(body?: CommonUserCreate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<CommonUser>>;
+    public createUser(body?: CommonUserCreate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -55,7 +52,7 @@ export class CommonUserService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<CommonUser>(`${this.basePath}/api/commonUser/createUser`,
+        return this.httpClient.post<CommonUser>(`${this.basePath}/commonUser/createUser`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -66,16 +63,13 @@ export class CommonUserService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<CommonUser>>;
-    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<CommonUser>>>;
-    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<CommonUser>>>;
-    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAllUsers(body?: CommonUserFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<CommonUser>>;
+    public getAllUsers(body?: CommonUserFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<CommonUser>>>;
+    public getAllUsers(body?: CommonUserFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<CommonUser>>>;
+    public getAllUsers(body?: CommonUserFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -95,7 +89,7 @@ export class CommonUserService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<CommonUser>>(`${this.basePath}/api/commonUser/getAllUsers`,
+        return this.httpClient.post<PaginationResponse<CommonUser>>(`${this.basePath}/commonUser/getAllUsers`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -106,16 +100,13 @@ export class CommonUserService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updateCommonUser(body?: CommonUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<CommonUser>;
-    public updateCommonUser(body?: CommonUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<CommonUser>>;
-    public updateCommonUser(body?: CommonUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<CommonUser>>;
-    public updateCommonUser(body?: CommonUserUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public updateUser(body?: CommonUserUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<CommonUser>;
+    public updateUser(body?: CommonUserUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<CommonUser>>;
+    public updateUser(body?: CommonUserUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<CommonUser>>;
+    public updateUser(body?: CommonUserUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -135,7 +126,7 @@ export class CommonUserService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<CommonUser>(`${this.basePath}/api/commonUser/updateUser`,
+        return this.httpClient.put<CommonUser>(`${this.basePath}/commonUser/updateUser`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,

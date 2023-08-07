@@ -1,7 +1,6 @@
 import { BasicPropertiesFilter } from '@flexicore/flexicore-client';
+import { PaginationFilter } from './paginationFilter';
 
-export interface SecurityOperationFilter {
-    pageSize?: number;
-    currentPage?: number;
+export interface SecurityOperationFilter extends PaginationFilter {
     basicPropertiesFilter?: BasicPropertiesFilter;
 }

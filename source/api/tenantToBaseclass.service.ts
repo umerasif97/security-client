@@ -26,16 +26,13 @@ export class TenantToBaseclassService {
         }
     }
 
-    public createTenantToBaseclass(body?: TenantToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<TenantToBaseclass>;
-    public createTenantToBaseclass(body?: TenantToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<TenantToBaseclass>>;
-    public createTenantToBaseclass(body?: TenantToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<TenantToBaseclass>>;
-    public createTenantToBaseclass(body?: TenantToBaseclassCreate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public create(body?: TenantToBaseclassCreate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<TenantToBaseclass>;
+    public create(body?: TenantToBaseclassCreate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<TenantToBaseclass>>;
+    public create(body?: TenantToBaseclassCreate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<TenantToBaseclass>>;
+    public create(body?: TenantToBaseclassCreate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -55,7 +52,7 @@ export class TenantToBaseclassService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<TenantToBaseclass>(`${this.basePath}/api/tenantToBaseclass/create`,
+        return this.httpClient.post<TenantToBaseclass>(`${this.basePath}/tenantToBaseclass/create`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -66,16 +63,13 @@ export class TenantToBaseclassService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<TenantToBaseclass>>;
-    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<TenantToBaseclass>>>;
-    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<TenantToBaseclass>>>;
-    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getAll(body?: TenantToBaseclassFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<TenantToBaseclass>>;
+    public getAll(body?: TenantToBaseclassFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<TenantToBaseclass>>>;
+    public getAll(body?: TenantToBaseclassFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<TenantToBaseclass>>>;
+    public getAll(body?: TenantToBaseclassFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -95,7 +89,7 @@ export class TenantToBaseclassService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<TenantToBaseclass>>(`${this.basePath}/api/tenantToBaseclass/getAll`,
+        return this.httpClient.post<PaginationResponse<TenantToBaseclass>>(`${this.basePath}/tenantToBaseclass/getAll`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -106,16 +100,13 @@ export class TenantToBaseclassService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public updateTenantToBaseclass(body?: TenantToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<TenantToBaseclass>;
-    public updateTenantToBaseclass(body?: TenantToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<TenantToBaseclass>>;
-    public updateTenantToBaseclass(body?: TenantToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<TenantToBaseclass>>;
-    public updateTenantToBaseclass(body?: TenantToBaseclassUpdate, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public update(body?: TenantToBaseclassUpdate, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<TenantToBaseclass>;
+    public update(body?: TenantToBaseclassUpdate, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<TenantToBaseclass>>;
+    public update(body?: TenantToBaseclassUpdate, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<TenantToBaseclass>>;
+    public update(body?: TenantToBaseclassUpdate, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
-        if (authenticationKey !== undefined && authenticationKey !== null) {
-            headers = headers.set('authenticationKey', String(authenticationKey));
-        }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -135,7 +126,7 @@ export class TenantToBaseclassService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<TenantToBaseclass>(`${this.basePath}/api/tenantToBaseclass/update`,
+        return this.httpClient.put<TenantToBaseclass>(`${this.basePath}/tenantToBaseclass/update`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
