@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "removeComments": true,
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "source",
+    "node_modules",
+    "bower_components",
+    "dist"
+  ]
+}
