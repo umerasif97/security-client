@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { UserToBaseclassCreate } from "../model/userToBaseclassCreate";
 import { UserToBaseclass } from "../model/userToBaseclass";
-import { UserToBaseclassFiltering } from "../model/userToBaseclassFiltering";
+import { UserToBaseclassFilter } from "../model/userToBaseclassFilter";
 import { UserToBaseclassUpdate } from "../model/userToBaseclassUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class UserToBaseclassService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getUserToBaseclasses(body?: UserToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<UserToBaseclass>>;
-    public getUserToBaseclasses(body?: UserToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<UserToBaseclass>>>;
-    public getUserToBaseclasses(body?: UserToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<UserToBaseclass>>>;
-    public getUserToBaseclasses(body?: UserToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<UserToBaseclass>>;
+    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<UserToBaseclass>>>;
+    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<UserToBaseclass>>>;
+    public getUserToBaseclasses(body?: UserToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

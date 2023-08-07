@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { RoleToBaseclassCreate } from "../model/roleToBaseclassCreate";
 import { RoleToBaseclass } from "../model/roleToBaseclass";
-import { RoleToBaseclassFiltering } from "../model/roleToBaseclassFiltering";
+import { RoleToBaseclassFilter } from "../model/roleToBaseclassFilter";
 import { RoleToBaseclassUpdate } from "../model/roleToBaseclassUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class RoleToBaseclassService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getRoleToBaseclasses(body?: RoleToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<RoleToBaseclass>>;
-    public getRoleToBaseclasses(body?: RoleToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<RoleToBaseclass>>>;
-    public getRoleToBaseclasses(body?: RoleToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<RoleToBaseclass>>>;
-    public getRoleToBaseclasses(body?: RoleToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getRoleToBaseclasses(body?: RoleToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<RoleToBaseclass>>;
+    public getRoleToBaseclasses(body?: RoleToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<RoleToBaseclass>>>;
+    public getRoleToBaseclasses(body?: RoleToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<RoleToBaseclass>>>;
+    public getRoleToBaseclasses(body?: RoleToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

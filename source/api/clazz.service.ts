@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { ClazzCreate } from "../model/clazzCreate";
 import { Clazz } from "../model/clazz";
-import { ClazzFiltering } from "../model/clazzFiltering";
+import { ClazzFilter } from "../model/clazzFilter";
 import { ClazzUpdate } from "../model/clazzUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class ClazzService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getClazzes(body?: ClazzFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<Clazz>>;
-    public getClazzes(body?: ClazzFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<Clazz>>>;
-    public getClazzes(body?: ClazzFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<Clazz>>>;
-    public getClazzes(body?: ClazzFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getClazzes(body?: ClazzFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<Clazz>>;
+    public getClazzes(body?: ClazzFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<Clazz>>>;
+    public getClazzes(body?: ClazzFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<Clazz>>>;
+    public getClazzes(body?: ClazzFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

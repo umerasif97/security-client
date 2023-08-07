@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { SecurityTenantCreate } from "../model/securityTenantCreate";
 import { SecurityTenant } from "../model/securityTenant";
-import { SecurityTenantFiltering } from "../model/securityTenantFiltering";
+import { SecurityTenantFilter } from "../model/securityTenantFilter";
 import { SecurityTenantUpdate } from "../model/securityTenantUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class SecurityTenantService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getSecurityTenants(body?: SecurityTenantFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityTenant>>;
-    public getSecurityTenants(body?: SecurityTenantFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityTenant>>>;
-    public getSecurityTenants(body?: SecurityTenantFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityTenant>>>;
-    public getSecurityTenants(body?: SecurityTenantFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityTenant>>;
+    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityTenant>>>;
+    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityTenant>>>;
+    public getSecurityTenants(body?: SecurityTenantFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

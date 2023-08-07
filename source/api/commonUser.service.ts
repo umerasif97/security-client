@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { CommonUserCreate } from "../model/commonUserCreate";
 import { CommonUser } from "../model/commonUser";
-import { CommonUserFiltering } from "../model/commonUserFiltering";
+import { CommonUserFilter } from "../model/commonUserFilter";
 import { CommonUserUpdate } from "../model/commonUserUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class CommonUserService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getCommonUsers(body?: CommonUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<CommonUser>>;
-    public getCommonUsers(body?: CommonUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<CommonUser>>>;
-    public getCommonUsers(body?: CommonUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<CommonUser>>>;
-    public getCommonUsers(body?: CommonUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<CommonUser>>;
+    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<CommonUser>>>;
+    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<CommonUser>>>;
+    public getCommonUsers(body?: CommonUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

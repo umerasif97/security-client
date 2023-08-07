@@ -2,13 +2,13 @@
 export * from './permissionGroup';
 export * from './permissionGroupCreate';
 export * from './permissionGroupUpdate';
-export * from './permissionGroupFiltering';
+export * from './permissionGroupFilter';
 
 // SecurityUser models
 export * from './securityUser';
 export * from './securityUserCreate';
 export * from './securityUserUpdate';
-export * from './securityUserFiltering';
+export * from './securityUserFilter';
 
 // Role models
 export * from './role';
@@ -20,7 +20,7 @@ export * from './roleFiltering';
 export * from './securityTenant';
 export * from './securityTenantCreate';
 export * from './securityTenantUpdate';
-export * from './securityTenantFiltering';
+export * from './securityTenantFilter';
 
 // SecurityLink models
 export * from './securityLink';
@@ -30,31 +30,31 @@ export * from './securityLinkUpdate';
 export * from './clazz';
 export * from './clazzCreate';
 export * from './clazzUpdate';
-export * from './clazzFiltering';
+export * from './clazzFilter';
 
 // SecurityOperation models
 export * from './securityOperation';
 export * from './securityOperationCreate';
 export * from './securityOperationUpdate';
-export * from './securityOperationFiltering';
+export * from './securityOperationFilter';
 
 // CommonUser models
 export * from './commonUser';
 export * from './commonUserCreate';
 export * from './commonUserUpdate';
-export * from './commonUserFiltering';
+export * from './commonUserFilter';
 
 // UserToBaseclass models
 export * from './userToBaseclass';
 export * from './userToBaseclassCreate';
 export * from './userToBaseclassUpdate';
-export * from './userToBaseclassFiltering';
+export * from './userToBaseclassFilter';
 
 // RoleToBaseclass models
 export * from './roleToBaseclass';
 export * from './roleToBaseclassCreate';
 export * from './roleToBaseclassUpdate';
-export * from './roleToBaseclassFiltering';
+export * from './roleToBaseclassFilter';
 
 // Tenant models
 export * from './tenant';
@@ -63,10 +63,10 @@ export * from './tenant';
 export * from './tenantToBaseclass';
 export * from './tenantToBaseclassCreate';
 export * from './tenantToBaseclassUpdate';
-export * from './tenantToBaseclassFiltering';
+export * from './tenantToBaseclassFilter';
 
 // PermissionGroupToBaseclass models
 export * from './permissionGroupToBaseclass';
 export * from './permissionGroupToBaseclassCreate';
 export * from './permissionGroupToBaseclassUpdate';
-export * from './permissionGroupToBaseclassFiltering';
+export * from './permissionGroupToBaseclassFilter';

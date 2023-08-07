@@ -4,7 +4,7 @@ import { Configuration } from "../configuration";
 import { BASE_PATH, PaginationResponse, FlexiCoreDecycle } from "@flexicore/flexicore-client";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { SecurityLinkFiltering } from "../model/securityLinkFiltering";
+import { SecurityLinkFilter } from "../model/securityLinkFilter";
 import { SecurityLink } from "../model/securityLink";
 import { SecurityLinkUpdate } from "../model/securityLinkUpdate";
 
@@ -25,10 +25,10 @@ export class SecurityLinkService {
         }
     }
 
-    public getSecurityLinks(body?: SecurityLinkFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityLink>>;
-    public getSecurityLinks(body?: SecurityLinkFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityLink>>>;
-    public getSecurityLinks(body?: SecurityLinkFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityLink>>>;
-    public getSecurityLinks(body?: SecurityLinkFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityLink>>;
+    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityLink>>>;
+    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityLink>>>;
+    public getSecurityLinks(body?: SecurityLinkFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

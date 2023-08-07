@@ -1,4 +1,4 @@
-export interface ClazzCreate {
-    name?: string;
-    description?: string;
+import { BasicCreate } from "@flexicore/flexicore-client";
+
+export interface ClazzCreate extends BasicCreate {
 }

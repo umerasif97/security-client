@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { PermissionGroupToBaseclassCreate } from "../model/permissionGroupToBaseclassCreate";
 import { PermissionGroupToBaseclass } from "../model/permissionGroupToBaseclass";
-import { PermissionGroupToBaseclassFiltering } from "../model/permissionGroupToBaseclassFiltering";
+import { PermissionGroupToBaseclassFilter } from "../model/permissionGroupToBaseclassFilter";
 import { PermissionGroupToBaseclassUpdate } from "../model/permissionGroupToBaseclassUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class PermissionGroupToBaseclassService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<PermissionGroupToBaseclass>>;
-    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<PermissionGroupToBaseclass>>>;
-    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<PermissionGroupToBaseclass>>>;
-    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<PermissionGroupToBaseclass>>;
+    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<PermissionGroupToBaseclass>>>;
+    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<PermissionGroupToBaseclass>>>;
+    public getPermissionGroupToBaseclasses(body?: PermissionGroupToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

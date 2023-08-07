@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { SecurityOperationCreate } from "../model/securityOperationCreate";
 import { SecurityOperation } from "../model/securityOperation";
-import { SecurityOperationFiltering } from "../model/securityOperationFiltering";
+import { SecurityOperationFilter } from "../model/securityOperationFilter";
 import { SecurityOperationUpdate } from "../model/securityOperationUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class SecurityOperationService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getSecurityOperations(body?: SecurityOperationFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityOperation>>;
-    public getSecurityOperations(body?: SecurityOperationFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityOperation>>>;
-    public getSecurityOperations(body?: SecurityOperationFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityOperation>>>;
-    public getSecurityOperations(body?: SecurityOperationFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityOperation>>;
+    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityOperation>>>;
+    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityOperation>>>;
+    public getSecurityOperations(body?: SecurityOperationFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

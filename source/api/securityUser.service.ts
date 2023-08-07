@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { SecurityUserCreate } from "../model/securityUserCreate";
 import { SecurityUser } from "../model/securityUser";
-import { SecurityUserFiltering } from "../model/securityUserFiltering";
+import { SecurityUserFilter } from "../model/securityUserFilter";
 import { SecurityUserUpdate } from "../model/securityUserUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class SecurityUserService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getSecurityUsers(body?: SecurityUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityUser>>;
-    public getSecurityUsers(body?: SecurityUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityUser>>>;
-    public getSecurityUsers(body?: SecurityUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityUser>>>;
-    public getSecurityUsers(body?: SecurityUserFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityUser>>;
+    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityUser>>>;
+    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityUser>>>;
+    public getSecurityUsers(body?: SecurityUserFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

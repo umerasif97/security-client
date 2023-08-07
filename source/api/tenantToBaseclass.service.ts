@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { TenantToBaseclassCreate } from "../model/tenantToBaseclassCreate";
 import { TenantToBaseclass } from "../model/tenantToBaseclass";
-import { TenantToBaseclassFiltering } from "../model/tenantToBaseclassFiltering";
+import { TenantToBaseclassFilter } from "../model/tenantToBaseclassFilter";
 import { TenantToBaseclassUpdate } from "../model/tenantToBaseclassUpdate";
 
 @Injectable()
@@ -66,10 +66,10 @@ export class TenantToBaseclassService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getTenantToBaseclasses(body?: TenantToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<TenantToBaseclass>>;
-    public getTenantToBaseclasses(body?: TenantToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<TenantToBaseclass>>>;
-    public getTenantToBaseclasses(body?: TenantToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<TenantToBaseclass>>>;
-    public getTenantToBaseclasses(body?: TenantToBaseclassFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<TenantToBaseclass>>;
+    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<PaginationResponse<HttpResponse<TenantToBaseclass>>>;
+    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<TenantToBaseclass>>>;
+    public getTenantToBaseclasses(body?: TenantToBaseclassFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;

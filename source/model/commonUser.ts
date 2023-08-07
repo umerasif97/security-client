@@ -1,6 +1,6 @@
-import { Basic } from "@flexicore/flexicore-client";
+import { SecurityUser } from "./securityUser";
 
-export interface CommonUser extends Basic {
+export interface CommonUser extends SecurityUser {
     email?: string;
     homeDir?: string;
     surName?: string;

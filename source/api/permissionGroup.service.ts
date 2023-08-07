@@ -4,10 +4,9 @@ import { Configuration } from "../configuration";
 import { BASE_PATH, PaginationResponse, FlexiCoreDecycle } from "@flexicore/flexicore-client";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-
 import { PermissionGroupCreate } from "../model/permissionGroupCreate";
 import { PermissionGroup } from "../model/permissionGroup";
-import { PermissionGroupFiltering } from "../model/permissionGroupFiltering";
+import { PermissionGroupFilter } from "../model/permissionGroupFilter";
 import { PermissionGroupUpdate } from "../model/permissionGroupUpdate";
 
 @Injectable()
@@ -67,10 +66,10 @@ export class PermissionGroupService {
         ).pipe(map((o: any) => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getPermissionGroups(body?: PermissionGroupFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<PermissionGroup>>;
-    public getPermissionGroups(body?: PermissionGroupFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<PermissionGroup>>>;
-    public getPermissionGroups(body?: PermissionGroupFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<PermissionGroup>>>;
-    public getPermissionGroups(body?: PermissionGroupFiltering, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<PermissionGroup>>;
+    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<PermissionGroup>>>;
+    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<PermissionGroup>>>;
+    public getPermissionGroups(body?: PermissionGroupFilter, authenticationKey?: string, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
         let headers = this.defaultHeaders;
