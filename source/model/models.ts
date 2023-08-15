@@ -85,3 +85,6 @@ export * from './access';
 export * from './securityEntity';
 export * from './securityEntityCreate';
 export * from './securityEntityFilter';
+
+//Login
+export * from './loginRequest';
