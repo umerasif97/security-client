@@ -3,7 +3,7 @@ import { SecurityUser } from "./securityUser";
 export interface CommonUser extends SecurityUser {
     email?: string;
     homeDir?: string;
-    surName?: string;
+    lastName?: string;
     totpSalt?: string;
     disabled?: boolean;
     dateApproved?: string;
