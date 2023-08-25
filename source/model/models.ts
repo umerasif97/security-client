@@ -88,3 +88,15 @@ export * from './securityEntityFilter';
 
 //Login
 export * from './loginRequest';
+
+// RoleToUser models
+export * from './roleToUser';
+export * from './roleToUserCreate';
+export * from './roleToUserUpdate';
+export * from './roleToUserFilter';
+
+// TenantToUser models
+export * from './tenantToUser';
+export * from './tenantToUserCreate';
+export * from './tenantToUserUpdate';
+export * from './tenantToUserFilter';

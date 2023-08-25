@@ -11,10 +11,14 @@ import { SecurityUserService } from './securityUser.service';
 import { TenantToBaseclassService } from './tenantToBaseclass.service';
 import { UserToBaseclassService } from './userToBaseclass.service';
 import { LoginService } from './login.service';
+import { RoleToUserService } from './roleToUser.service';
+import { TenantToUserService } from './tenantToUser.service';
 
 export {
     PermissionGroupService, SecurityUserService, RoleService, SecurityTenantService, SecurityLinkService, ClazzService, SecurityOperationService,
-    CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService
+    CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService,
+    RoleToUserService, TenantToUserService
 };
 export const APIS = [PermissionGroupService, SecurityUserService, RoleService, SecurityTenantService, SecurityLinkService, ClazzService, SecurityOperationService,
-    CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService];
+    CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService,
+    RoleToUserService, TenantToUserService];
