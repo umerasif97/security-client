@@ -4,6 +4,7 @@ import { Access } from './access';
 
 export interface SecurityLinkFilter extends PaginationFilter {
     basicPropertiesFilter?: BasicPropertiesFilter;
+    relevantUserIds?: string[];
     baseclassIds?: string[];
     operationIds?: string[];
     accesses?: Access[];
