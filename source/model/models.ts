@@ -69,6 +69,8 @@ export * from './permissionGroupToBaseclass';
 export * from './permissionGroupToBaseclassCreate';
 export * from './permissionGroupToBaseclassUpdate';
 export * from './permissionGroupToBaseclassFilter';
+export * from './permissionGroupToBaseclassSorting';
+export * from './permissionGroupToBaseclassSortingEnum';
 
 // Pagination models
 export * from './paginationFilter';
@@ -100,3 +102,21 @@ export * from './tenantToUser';
 export * from './tenantToUserCreate';
 export * from './tenantToUserUpdate';
 export * from './tenantToUserFilter';
+
+// OperationGroup models
+export * from './operationGroup';
+export * from './operationGroupCreate';
+export * from './operationGroupUpdate';
+export * from './operationGroupFilter';
+
+// OperationToGroup models
+export * from './operationToGroup';
+export * from './operationToGroupCreate';
+export * from './operationToGroupUpdate';
+export * from './operationToGroupFilter';
+
+// OperationToClazz models
+export * from './operationToClazz';
+export * from './operationToClazzCreate';
+export * from './operationToClazzUpdate';
+export * from './operationToClazzFilter';

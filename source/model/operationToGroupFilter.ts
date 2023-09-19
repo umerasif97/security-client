@@ -1,9 +1,8 @@
 import { BasicPropertiesFilter } from '@flexicore/flexicore-client';
 import { PaginationFilter } from './paginationFilter';
 
-export interface SecurityOperationFilter extends PaginationFilter {
+export interface OperationToGroupFilter extends PaginationFilter {
     basicPropertiesFilter?: BasicPropertiesFilter;
-    categories?: string[];
+    operationIds?: string[];
     operationGroupIds?: string[];
-    categoryLike?: string;
 }
