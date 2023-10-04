@@ -17,12 +17,13 @@ import { BaseclassService } from './baseclass.service';
 import { OperationGroupService } from './operationGroup.service';
 import { OperationToGroupService } from './operationToGroup.service';
 import { OperationToClazzService } from './operationToClazz.service';
+import { SecurityLinkGroupService } from './securityLinkGroup.service';
 
 export {
     PermissionGroupService, SecurityUserService, RoleService, SecurityTenantService, SecurityLinkService, ClazzService, SecurityOperationService,
     CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService,
-    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService
+    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService, SecurityLinkGroupService
 };
 export const APIS = [PermissionGroupService, SecurityUserService, RoleService, SecurityTenantService, SecurityLinkService, ClazzService, SecurityOperationService,
     CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService,
-    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService];
+    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService, SecurityLinkGroupService];

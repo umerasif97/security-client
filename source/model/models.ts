@@ -3,6 +3,7 @@ export * from './permissionGroup';
 export * from './permissionGroupCreate';
 export * from './permissionGroupUpdate';
 export * from './permissionGroupFilter';
+export * from './permissionGroupDuplicate';
 
 // SecurityUser models
 export * from './securityUser';
@@ -120,3 +121,9 @@ export * from './operationToClazz';
 export * from './operationToClazzCreate';
 export * from './operationToClazzUpdate';
 export * from './operationToClazzFilter';
+
+// SecurityLinkGroup models
+export * from './securityLinkGroup';
+export * from './securityLinkGroupUpdate';
+export * from './securityLinkGroupCreate';
+export * from './securityLinkGroupFilter';

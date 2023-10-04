@@ -8,4 +8,5 @@ export interface SecurityLinkFilter extends PaginationFilter {
     baseclassIds?: string[];
     operationIds?: string[];
     accesses?: Access[];
+    securityLinkGroupIds?: string[];
 }
