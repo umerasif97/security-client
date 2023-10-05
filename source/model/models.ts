@@ -127,3 +127,4 @@ export * from './securityLinkGroup';
 export * from './securityLinkGroupUpdate';
 export * from './securityLinkGroupCreate';
 export * from './securityLinkGroupFilter';
+export * from './securityLinkGroupContainer';

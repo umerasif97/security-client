@@ -9,4 +9,5 @@ export interface SecurityLinkCreate extends BasicCreate {
     operationId?: string;
     operationGroupId?: string;
     access?: Access;
+    securityLinkGroupId?: string;
 }
