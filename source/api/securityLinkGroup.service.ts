@@ -8,6 +8,7 @@ import { SecurityLinkGroupFilter } from "../model/securityLinkGroupFilter";
 import { SecurityLinkGroup } from "../model/securityLinkGroup";
 import { SecurityLinkGroupUpdate } from "../model/securityLinkGroupUpdate";
 import { SecurityLinkGroupCreate } from "../model/securityLinkGroupCreate";
+import { SecurityLinkGroupContainer } from "../model/securityLinkGroupContainer";
 
 @Injectable()
 export class SecurityLinkGroupService {
@@ -137,9 +138,9 @@ export class SecurityLinkGroupService {
         ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
     }
 
-    public getAllContainers(body?: SecurityLinkGroupFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityLinkGroup>>;
-    public getAllContainers(body?: SecurityLinkGroupFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityLinkGroup>>>;
-    public getAllContainers(body?: SecurityLinkGroupFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityLinkGroup>>>;
+    public getAllContainers(body?: SecurityLinkGroupFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<SecurityLinkGroupContainer>>;
+    public getAllContainers(body?: SecurityLinkGroupFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<SecurityLinkGroupContainer>>>;
+    public getAllContainers(body?: SecurityLinkGroupFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<SecurityLinkGroupContainer>>>;
     public getAllContainers(body?: SecurityLinkGroupFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
 
 
@@ -163,7 +164,7 @@ export class SecurityLinkGroupService {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<PaginationResponse<SecurityLinkGroup>>(`${this.basePath}/securityLinkGroup/getAllContainers`,
+        return this.httpClient.post<PaginationResponse<SecurityLinkGroupContainer>>(`${this.basePath}/securityLinkGroup/getAllContainers`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
