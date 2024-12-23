@@ -9,8 +9,7 @@ export interface SecurityLink extends Baseclass {
     access?: Access;
     operationGroup?: OperationGroup;
     securityLinkGroup?: SecurityLinkGroup;
-    securityId?: String;
-    securedId?: String;
-    securedType?: String;
-    operationId?: String;
+    securedId?: string;
+    securedType?: string;
+    operationId?: string;
 }
