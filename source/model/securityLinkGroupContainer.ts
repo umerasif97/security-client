@@ -1,6 +1,6 @@
-import { Basic } from "@flexicore/flexicore-client";
 import { SecurityLinkGroup } from "./securityLinkGroup";
 import { SecurityLink } from "./securityLink";
+import { Basic } from "./basic";
 
 export interface SecurityLinkGroupContainer extends Basic {
     securityLinkGroup?: SecurityLinkGroup;

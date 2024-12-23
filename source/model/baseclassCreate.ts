@@ -1,6 +1,6 @@
-import { BasicCreate } from "@flexicore/flexicore-client";
+import { BasicCreate } from "./basicCreate";
 
 export interface BaseclassCreate extends BasicCreate {
     tenantId?: string;
-    systemObject?: boolean;
+    securityId?: string;
 }

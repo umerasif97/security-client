@@ -1,7 +1,6 @@
 import { Injectable, Optional, Inject } from "@angular/core";
 import { HttpHeaders, HttpClient, HttpResponse, HttpEvent } from "@angular/common/http";
 import { Configuration } from "../configuration";
-import { BASE_PATH, PaginationResponse, FlexiCoreDecycle } from "@flexicore/flexicore-client";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { PermissionGroupCreate } from "../model/permissionGroupCreate";
@@ -9,6 +8,9 @@ import { PermissionGroup } from "../model/permissionGroup";
 import { PermissionGroupFilter } from "../model/permissionGroupFilter";
 import { PermissionGroupUpdate } from "../model/permissionGroupUpdate";
 import { PermissionGroupDuplicate } from "../model/permissionGroupDuplicate";
+import { BASE_PATH } from "../variables";
+import { PaginationResponse } from "../model/paginationResponse";
+import { FlexiCoreDecycle } from "./flexiCoreDecycle";
 
 @Injectable()
 export class PermissionGroupService {

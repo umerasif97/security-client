@@ -18,12 +18,13 @@ import { OperationGroupService } from './operationGroup.service';
 import { OperationToGroupService } from './operationToGroup.service';
 import { OperationToClazzService } from './operationToClazz.service';
 import { SecurityLinkGroupService } from './securityLinkGroup.service';
+import { FlexiCoreDecycle } from './flexiCoreDecycle';
 
 export {
     PermissionGroupService, SecurityUserService, RoleService, SecurityTenantService, SecurityLinkService, ClazzService, SecurityOperationService,
     CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService,
-    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService, SecurityLinkGroupService
+    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService, SecurityLinkGroupService, FlexiCoreDecycle
 };
 export const APIS = [PermissionGroupService, SecurityUserService, RoleService, SecurityTenantService, SecurityLinkService, ClazzService, SecurityOperationService,
     CommonUserService, UserToBaseclassService, RoleToBaseclassService, TenantToBaseclassService, PermissionGroupToBaseclassService, LoginService,
-    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService, SecurityLinkGroupService];
+    RoleToUserService, TenantToUserService, BaseclassService, OperationGroupService, OperationToGroupService, OperationToClazzService, SecurityLinkGroupService, FlexiCoreDecycle];

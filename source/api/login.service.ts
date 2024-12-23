@@ -1,10 +1,11 @@
 import { Injectable, Optional, Inject } from "@angular/core";
 import { HttpHeaders, HttpClient, HttpResponse, HttpEvent } from "@angular/common/http";
 import { Configuration } from "../configuration";
-import { BASE_PATH, FlexiCoreDecycle } from "@flexicore/flexicore-client";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { LoginRequest } from "../model/loginRequest";
+import { BASE_PATH } from "../variables";
+import { FlexiCoreDecycle } from "./flexiCoreDecycle";
 
 @Injectable()
 export class LoginService {

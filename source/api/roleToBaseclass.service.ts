@@ -1,13 +1,15 @@
 import { Injectable, Optional, Inject } from "@angular/core";
 import { HttpHeaders, HttpClient, HttpResponse, HttpEvent } from "@angular/common/http";
 import { Configuration } from "../configuration";
-import { BASE_PATH, PaginationResponse, FlexiCoreDecycle } from "@flexicore/flexicore-client";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { RoleToBaseclassCreate } from "../model/roleToBaseclassCreate";
 import { RoleToBaseclass } from "../model/roleToBaseclass";
 import { RoleToBaseclassFilter } from "../model/roleToBaseclassFilter";
 import { RoleToBaseclassUpdate } from "../model/roleToBaseclassUpdate";
+import { BASE_PATH } from "../variables";
+import { PaginationResponse } from "../model/paginationResponse";
+import { FlexiCoreDecycle } from "./flexiCoreDecycle";
 
 @Injectable()
 export class RoleToBaseclassService {
