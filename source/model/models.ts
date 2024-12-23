@@ -31,14 +31,10 @@ export * from './securityLinkFilter';
 
 // Clazz models
 export * from './clazz';
-export * from './clazzCreate';
-export * from './clazzUpdate';
 export * from './clazzFilter';
 
 // SecurityOperation models
 export * from './securityOperation';
-export * from './securityOperationCreate';
-export * from './securityOperationUpdate';
 export * from './securityOperationFilter';
 
 // CommonUser models
@@ -118,8 +114,6 @@ export * from './operationToGroupFilter';
 
 // OperationToClazz models
 export * from './operationToClazz';
-export * from './operationToClazzCreate';
-export * from './operationToClazzUpdate';
 export * from './operationToClazzFilter';
 
 // SecurityLinkGroup models

@@ -3,6 +3,6 @@ import { SecurityOperation } from "./securityOperation";
 import { Clazz } from "./clazz";
 
 export interface OperationToClazz extends Basic {
-    securityOperation?: SecurityOperation;
+    operation?: SecurityOperation;
     clazz?: Clazz;
 }

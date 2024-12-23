@@ -4,8 +4,7 @@ import { PermissionGroupToBaseclassSorting } from './permissionGroupToBaseclassS
 
 export interface PermissionGroupToBaseclassFilter extends PaginationFilter {
     basicPropertiesFilter?: BasicPropertiesFilter;
-    baseclassIds?: string[];
-    clazzIds?: string[];
+    securedIds?: string[];
     permissionGroupIds?: string[];
     sorting?: PermissionGroupToBaseclassSorting;
 }

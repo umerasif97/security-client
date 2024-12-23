@@ -1,5 +1,9 @@
-import { Basic } from "@flexicore/flexicore-client";
+import { Access } from "./access";
 
-export interface SecurityOperation extends Basic {
-    defaultAccess?: string;
+export interface SecurityOperation {
+    id?: string;
+    name?: string;
+    description?: string;
+    defaultAccess?: Access;
+    category?: string;
 }
