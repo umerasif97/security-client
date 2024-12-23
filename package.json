@@ -1,6 +1,6 @@
 {
   "name": "@flexicore/security-client",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "This is a SDK for MappedPOI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,9 +27,9 @@
     "zone.js": "~0.11.4"
   },
   "dependencies": {
-    "@flexicore/flexicore-client": "^3.0.28",
     "jasmine": "^3.10.0",
     "rxjs": "^7.5.5",
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.4.0",
+    "uuid": "^9.0.1"
   }
 }

@@ -1,8 +1,8 @@
-import { Basic } from "@flexicore/flexicore-client";
 import { SecurityOperation } from "./securityOperation";
 import { Clazz } from "./clazz";
+import { Basic } from "./basic";
 
 export interface OperationToClazz extends Basic {
-    securityOperation?: SecurityOperation;
+    operation?: SecurityOperation;
     clazz?: Clazz;
 }

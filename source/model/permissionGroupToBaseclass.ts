@@ -1,8 +1,8 @@
-import { Basic } from "@flexicore/flexicore-client";
 import { PermissionGroup } from "./permissionGroup";
 import { Baseclass } from "./baseclass";
 
-export interface PermissionGroupToBaseclass extends Basic {
+export interface PermissionGroupToBaseclass extends Baseclass {
     permissionGroup?: PermissionGroup;
-    baseclass?: Baseclass;
+    securedId?: string;
+    securedType?: string;
 }

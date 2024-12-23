@@ -1,13 +1,15 @@
 import { Injectable, Optional, Inject } from "@angular/core";
 import { HttpHeaders, HttpClient, HttpResponse, HttpEvent } from "@angular/common/http";
 import { Configuration } from "../configuration";
-import { BASE_PATH, PaginationResponse, FlexiCoreDecycle } from "@flexicore/flexicore-client";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { OperationGroupCreate } from "../model/operationGroupCreate";
 import { OperationGroup } from "../model/operationGroup";
 import { OperationGroupFilter } from "../model/operationGroupFilter";
 import { OperationGroupUpdate } from "../model/operationGroupUpdate";
+import { BASE_PATH } from "../variables";
+import { PaginationResponse } from "../model/paginationResponse";
+import { FlexiCoreDecycle } from "./flexiCoreDecycle";
 
 @Injectable()
 export class OperationGroupService {

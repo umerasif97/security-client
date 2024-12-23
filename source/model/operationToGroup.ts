@@ -1,6 +1,6 @@
-import { Basic } from "@flexicore/flexicore-client";
 import { SecurityOperation } from "./securityOperation";
 import { OperationGroup } from "./operationGroup";
+import { Basic } from "./basic";
 
 export interface OperationToGroup extends Basic {
     operation?: SecurityOperation;
