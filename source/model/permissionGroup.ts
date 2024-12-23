@@ -1,4 +1,4 @@
-import { Basic } from '@flexicore/flexicore-client';
+import { Basic } from "./basic";
 
 export interface PermissionGroup extends Basic {
     externalId?: string;

@@ -1,4 +1,4 @@
-import { BasicCreate } from '@flexicore/flexicore-client';
+import { BasicCreate } from "./basicCreate";
 
 export interface OperationGroupCreate extends BasicCreate {
     externalId?: string;

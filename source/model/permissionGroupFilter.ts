@@ -1,4 +1,4 @@
-import { BasicPropertiesFilter } from '@flexicore/flexicore-client';
+import { BasicPropertiesFilter } from './basicPropertiesFilter';
 import { PaginationFilter } from './paginationFilter';
 
 export interface PermissionGroupFilter extends PaginationFilter {

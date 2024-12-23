@@ -129,3 +129,8 @@ export * from './basic';
 export * from './basicCreate';
 export * from './basicPropertiesFilter';
 export * from './dateFilter';
+
+// Delete models
+export * from './deleteObjectRequest';
+export * from './deleteObjectRequests';
+export * from './deleteResponse';
