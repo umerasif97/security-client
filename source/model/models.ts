@@ -112,6 +112,7 @@ export * from './operationToGroup';
 export * from './operationToGroupCreate';
 export * from './operationToGroupUpdate';
 export * from './operationToGroupFilter';
+export * from './operationToGroupContainer';
 
 // OperationToClazz models
 export * from './operationToClazz';
