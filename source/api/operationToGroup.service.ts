@@ -10,6 +10,7 @@ import { OperationToGroupUpdate } from "../model/operationToGroupUpdate";
 import { BASE_PATH } from "../variables";
 import { PaginationResponse } from "../model/paginationResponse";
 import { FlexiCoreDecycle } from "./flexiCoreDecycle";
+import { OperationToGroupContainer } from "../model/operationToGroupContainer";
 
 @Injectable()
 export class OperationToGroupService {
@@ -129,6 +130,43 @@ export class OperationToGroupService {
         }
 
         return this.httpClient.put<OperationToGroup>(`${this.basePath}/operationToGroup/update`,
+            body,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        ).pipe(map(o => FlexiCoreDecycle.retrocycle(o)));
+    }
+
+    public getAllContainers(body?: OperationToGroupFilter, extraHttpRequestParams?: any, observe?: 'body', reportProgress?: boolean): Observable<PaginationResponse<OperationToGroupContainer>>;
+    public getAllContainers(body?: OperationToGroupFilter, extraHttpRequestParams?: any, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<PaginationResponse<OperationToGroupContainer>>>;
+    public getAllContainers(body?: OperationToGroupFilter, extraHttpRequestParams?: any, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<PaginationResponse<OperationToGroupContainer>>>;
+    public getAllContainers(body?: OperationToGroupFilter, extraHttpRequestParams?: any, observe: any = 'body', reportProgress: boolean = false): Observable<any> {
+
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'application/json'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected != undefined) {
+            headers = headers.set('Content-Type', httpContentTypeSelected);
+        }
+
+        return this.httpClient.post<PaginationResponse<OperationToGroupContainer>>(`${this.basePath}/operationToGroup/getAllContainers`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
