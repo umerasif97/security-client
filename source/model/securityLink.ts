@@ -3,6 +3,7 @@ import { Baseclass } from "./baseclass";
 import { Access } from "./access";
 import { SecurityLinkGroup } from "./securityLinkGroup";
 import { OperationGroup } from "./operationGroup";
+import { SecurityOperation } from "./securityOperation";
 
 export interface SecurityLink extends Baseclass {
     permissionGroup?: PermissionGroup;
@@ -11,5 +12,5 @@ export interface SecurityLink extends Baseclass {
     securityLinkGroup?: SecurityLinkGroup;
     securedId?: string;
     securedType?: string;
-    operationId?: string;
+    operation?: SecurityOperation;
 }
