@@ -1,6 +1,6 @@
 {
   "name": "@flexicore/security-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a SDK for MappedPOI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
