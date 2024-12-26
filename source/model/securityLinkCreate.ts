@@ -1,5 +1,6 @@
 import { Access } from "./access";
 import { BaseclassCreate } from "./baseclassCreate";
+import { Clazz } from "./clazz";
 
 
 export interface SecurityLinkCreate extends BaseclassCreate {
@@ -9,4 +10,5 @@ export interface SecurityLinkCreate extends BaseclassCreate {
     operationGroupId?: string;
     access?: Access;
     securityLinkGroupId?: string;
+    clazz?: Clazz;
 }
